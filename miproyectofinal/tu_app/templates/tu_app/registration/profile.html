@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil de Usuario</title>
+</head>
+<body>
+    <h1>Perfil de Usuario</h1>
+    <!-- Mostrar la información del perfil del usuario aquí -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="id_nombre">Nombre:</label>
+    <input type="text" id="id_nombre" name="nombre" value="{{ user.profile.nombre }}">
+    
+    <label for="id_descripcion">Descripción:</label>
+    <textarea id="id_descripcion" name="descripcion">{{ user.profile.descripcion }}</textarea>
+    
+    <label for="id_imagen">Imagen:</label>
+    <input type="file" id="id_imagen" name="imagen">
+    
+    <!-- Agrega más campos según sea necesario -->
+    
+    <input type="submit" value="Guardar Cambios">
+</form>

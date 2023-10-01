@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Blogs</title>
+</head>
+<body>
+    <h1>Listado de Blogs</h1>
+    <!-- Mostrar la lista de blogs aquí -->
+    {% for blog in blogs %}
+    <h2><a href="{% url 'blog_detail' blog.id %}">{{ blog.title }}</a></h2>
+    <p>{{ blog.subtitle }}</p>
+    <!-- Agregar más detalles del blog si es necesario -->
+    {% endfor %}
+</body>
+</html>
+
+
+
